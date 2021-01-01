@@ -7,7 +7,7 @@ if __name__ == '__main__':
 
     if (b < a < c) or (c < a < b):
         print(f'Средним из {a}, {b} и {c} является: {a}')
-    elif a < b < c or c < b < a:
+    elif (a < b < c) or (c < b < a):
         print(f'Средним из {a}, {b} и {c} является: {b}')
     else:
         print(f'Средним из {a}, {b} и {c} является: {c}')
