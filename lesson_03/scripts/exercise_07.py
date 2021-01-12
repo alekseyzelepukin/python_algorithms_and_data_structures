@@ -4,7 +4,6 @@
 from random import randint
 from typing import List
 
-# TODO:
 if __name__ == '__main__':
     n: int = 10
     arr: List = [randint(-9, 9) for _ in range(n)]
