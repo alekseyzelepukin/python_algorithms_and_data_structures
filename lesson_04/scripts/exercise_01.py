@@ -9,6 +9,7 @@
 import cProfile
 from random import randint
 from typing import List, Callable, NoReturn
+from inspect import signature
 
 
 def create_matrix_in_2_loops(m: int = 3, n: int = 3) -> List[List[int]]:
@@ -52,8 +53,27 @@ def create_matix_by_recursion(m: int = 3, n: int = 3, counter: int = 0) -> List[
         return matrix
 
 
+def test(func: Callable) -> NoReturn:
+    parameters_number: int = len(signature(func).parameters)
+    sizes: List[int] = [2, 3, 4, 5, 6, 7, 8, 9, 10]
+    for size in sizes:
+        counter: int = 0
+        if parameters_number == 1:
+            matrix: List[List[int]] = func(size)
+        else:
+            matrix: List[List[int]] = func(size, size)
+        for row in matrix:
+            for _ in row:
+                counter += 1
+        assert (size ** 2) == counter
+        print(f'Test {func.__name__} for {size}: OK')
+    print()
+
+
 if __name__ == '__main__':
-    cProfile.run('create_matix_by_recursion(100, 100)')
+    test(create_matrix_in_2_loops)
+    test(create_matrix_in_1_loop)
+    test(create_matix_by_recursion)
 
 # create_matrix_in_2_loops
 
