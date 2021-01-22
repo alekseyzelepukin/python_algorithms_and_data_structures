@@ -116,7 +116,7 @@ def test(func: Callable):
     mul_res: List[str] = ['7', 'C', '9', 'F', 'E']
     if func.__name__.endswith('add'):
         assert func('A2', 'C4F') == add_res
-    elif func.__name__.endswith('add'):
+    elif func.__name__.endswith('mul'):
         assert func('A2', 'C4F') == mul_res
     print(f'Test {func.__name__}: OK')
     print()
