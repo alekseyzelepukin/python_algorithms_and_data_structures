@@ -51,7 +51,6 @@ def test(func: Callable, n: int = 10) -> NoReturn:
 
 
 if __name__ == '__main__':
-
     test(merge_sort)
 
     n: int = 10

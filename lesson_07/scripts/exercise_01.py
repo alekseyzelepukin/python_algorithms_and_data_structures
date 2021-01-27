@@ -42,7 +42,6 @@ def test(func: Callable, ascending: bool = False, n: int = 10) -> NoReturn:
 
 
 if __name__ == '__main__':
-
     test(bubble_sort)
 
     n: int = 10
